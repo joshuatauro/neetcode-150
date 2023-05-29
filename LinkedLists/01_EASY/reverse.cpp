@@ -14,7 +14,6 @@ class ListNode{
 ListNode* reverseList(ListNode* head){
             if(head == NULL) return head;
     ListNode* temp = head;
-    ListNode* nextNode=NULL;
     ListNode* prevNode=NULL;
     while(temp != NULL){
         nextNode=temp->next;
