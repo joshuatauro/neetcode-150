@@ -11,7 +11,7 @@ bool isAnagram(string s1, string s2){
     }
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         vector<vector<string>> res;
-        for (int i=0; i<strs.size(); i++) {
+        for (int i=0; i<strs.size(); i++) {    
             vector<string> subS;
             subS.push_back(strs[i]);
             for(int j=i+1;j<strs.size();j++){

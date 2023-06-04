@@ -26,7 +26,7 @@ vector<int> twoSum(vector<int>& numbers, int target) {
 
 // tc - O(n)
 vector<int> twoSum(vector<int>& numbers, int target) {
-    int s=0;   
+    int s=0;        
     int l=numbers.size()-1;
 
     while(s<=l){
