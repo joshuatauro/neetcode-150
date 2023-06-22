@@ -1,40 +1,34 @@
 #include<bits/stdc++.h>
 class Solution {
 public:
-    ListNode* appendToList(ListNode* head, int val){
-        ListNode *newnode = new ListNode(val);
-        if(head == NULL) return newnode;
-        ListNode* curr = head;
-        while(curr->next!=NULL){
-            curr = curr->next;
-        }
-        curr->next = newnode;
-        return head;
-    }
-    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-        ListNode* list3;
-        if(list1 == NULL) return list2;
-        if(list2 == NULL) return list1;
-        while(list1 != NULL && list2 != NULL){
-            if(list1->val < list2->val){
-                list3=appendToList(list3, list1->val);
-                list1=list1->next;
-            }else if(list2->val < list1->val){
-                list3=appendToList(list3, list2->val);
-                list2=list2->next;
-            }else{
-                list3=appendToList(list3, list1->val);
-                list1=list1->next;
+        ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        ListNode *temp1, *temp2;
+        temp1=list1;
+        temp2=list2;
+        ListNode* head3 = new ListNode();
+        ListNode *temp3 = head3; 
+        while(temp1 != NULL && temp2 != NULL){
+            if(temp1->val <= temp2->val){
+                temp3->next = new ListNode(temp1->val);
+                temp3=temp3->next;
+                temp1=temp1->next;
+            }else if(temp2->val < temp1->val){
+                temp3->next = new ListNode(temp2->val);
+                temp3=temp3->next;
+                temp2=temp2->next;
             }
         }
-        while(list1 != NULL){
-            list3=appendToList(list3, list1->val);
-            list1=list1->next;
+
+        while(temp1!=NULL){
+            temp3->next = new ListNode(temp1->val);
+            temp3=temp3->next;
+            temp1=temp1->next;
         }
-        while(list2 != NULL){
-            list3=appendToList(list3, list2->val);
-            list2=list2->next;
+        while(temp2!=NULL){
+            temp3->next = new ListNode(temp2->val);
+            temp2=temp2->next;
+            temp3=temp3->next;
         }
-        return list3;
+        return head3->next;
     }
 };
