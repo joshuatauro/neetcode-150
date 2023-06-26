@@ -1,4 +1,17 @@
-#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+
+class ListNode{
+    public:
+    int val;
+    ListNode* next;
+
+    ListNode(int val){
+        this->val=val;
+    }
+
+    ListNode(){};
+};
 class Solution {
 public:
         ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
